@@ -23,7 +23,7 @@
 
 <p align="center">
     <a href="https://developer.apple.com/swift/" target="_blank">
-        <img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift 3.0">
+        <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0">
     </a>
     <a href="https://developer.apple.com/swift/" target="_blank">
         <img src="https://img.shields.io/badge/Platforms-OS%20X%20%7C%20Linux%20-lightgray.svg?style=flat" alt="Platforms OS X | Linux">
@@ -43,73 +43,40 @@ Examples using CURL to request data using Perfect
 
 This package builds with Swift Package Manager and is part of the [Perfect](https://github.com/PerfectlySoft/Perfect) project.
 
-Ensure you have installed Xcode 8.0 or later.
+Ensure you have installed Xcode 9.2 or later.
 
-## Setup - Xcode 8
+## Setup - Xcode 9
 
 
 * Check out or download the project;
 * In terminal, navigate to the directory and execute
 
 ```
-swift package generate-xcodeproj
+swift package generate-xcodeproj && open .
 ```
 
-* Open `Perfect-CURL.xcodeproj`
+* Open the Xcode project
 * Select the executable target, and "Run"
 
 ## Setup - Terminal
 
 * Check out or download the project;
 * In terminal, navigate to the directory 
-* Execute `swift build`
-* Once the project has compiled, execute `./.build/debug/Perfect-CURL`
+* Execute `swift run`
 
 From either Xcode or Terminal, you will see a result similar to this:
 
 ```
+Linking ./.build/x86_64-apple-macosx10.10/debug/Perfect-CURL-Example
 Test URL: https://helloacm.com
-Header:
-HTTP/1.1 200 OK
-Date: Mon, 03 Oct 2016 14:40:58 GMT
-Content-Type: text/html; charset=UTF-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-Set-Cookie: __cfduid=df6f30d252ed62e98b354394a0e0df2551475505658; expires=Tue, 03-Oct-17 14:40:58 GMT; path=/; domain=.helloacm.com; HttpOnly
-Strict-Transport-Security: max-age=15552000; includeSubDomains; preload
-Vary: Accept-Encoding,User-Agent
-Last-Modified: Mon, 03 Oct 2016 09:37:01 GMT
-Cache-Control: public, max-age=86400
-Expires: Tue, 04 Oct 2016 14:40:58 GMT
-CF-Cache-Status: HIT
-X-Content-Type-Options: nosniff
-Server: cloudflare-nginx
-CF-RAY: 2ec126fb5b073030-YYZ
-
-
+get 116864 bytes
 ====================================================================
 Test URL: http://ip.jsontest.com/
-Header:
-HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-Content-Type: application/json; charset=ISO-8859-1
-X-Cloud-Trace-Context: f3a85f599c865efd42dc9a427fcf55dc
-Date: Mon, 03 Oct 2016 14:40:58 GMT
-Server: Google Frontend
-Content-Length: 24
-
-
-Body:
-Optional(["ip": "127.0.0.1"])
-
-
+get json: ["ip": "68.232.66.174"]
 ====================================================================
-Body of http://date.jsontest.com/:
-Optional(["time": "02:40:58 PM", 
-"date": "10-03-2016", 
-"milliseconds_since_epoch": 1475505658330])
-
-Program ended with exit code: 0
+Using Swift 4.0 Decodable to test http://date.jsontest.com/:
+Test URL: http://date.jsontest.com/
+get json: JSONTestReturn(time: "07:25:00 PM", milliseconds_since_epoch: 1517340300439, date: "01-30-2018")
 ```
 
 

@@ -22,7 +22,9 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 *.xcscmblueprint
-
+*.pins
+*.resolved
+.build*
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
